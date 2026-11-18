@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promises and Async/Await</title>
+</head>
+<body>
+    <h2>JavaScript Promises and Async/Await</h2>
+    <script>
+        // Creating a Promise with local data
+        let studentPromise = new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+                let student = {
+                    name: "Rahul",
+                    age: 20,
+                    course: "JavaScript"
+                };
+
+                resolve(student);
+            }, 2000);
+
+        });
+        // Handling Promise using async/await
+        async function getStudent() {
+            try {
+                let student = await studentPromise;
+
+                console.log("Student Name:", student.name);
+                console.log("Student Age:", student.age);
+                console.log("Course:", student.course);
+
+            } catch (error) {
+                console.log("Error:", error);
+            }
+        }
+        getStudent();
+    </script>
+</body>
+</html>

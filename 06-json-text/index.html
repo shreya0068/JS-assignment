@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript JSON Example</title>
+</head>
+<body>
+
+    <h2>JSON Text Example</h2>
+
+    <script>
+        // Creating a JavaScript object
+        let student = {
+            name: "Rahul",
+            age: 20,
+            course: "Computer Science"
+        };
+
+        // Convert object into JSON string
+        let jsonText = JSON.stringify(student);
+
+        console.log("JSON String:", jsonText);
+
+        // Convert JSON string into object
+        let newStudent = JSON.parse(jsonText);
+
+        console.log("Student Name:", newStudent.name);
+        console.log("Student Age:", newStudent.age);
+        console.log("Course:", newStudent.course);
+    </script>
+
+</body>
+</html>

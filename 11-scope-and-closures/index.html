@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scope and Closures</title>
+</head>
+<body>
+    <h2>JavaScript Scope and Closures</h2>
+    <script>
+        // Global Scope
+        let globalMessage = "Hello Global Scope";
+        function showMessage() {
+            // Function Scope
+            let localMessage = "Hello Function Scope";
+            console.log(globalMessage);
+            console.log(localMessage);
+        }
+        showMessage();
+        // Closure Example
+        function outerFunction() {
+            let count = 0;
+
+            function innerFunction() {
+                count++;
+                console.log("Count:", count);
+            }
+            return innerFunction;
+        }
+        let counter = outerFunction();
+        counter();
+        counter();
+        counter();
+    </script>
+</body>
+</html>

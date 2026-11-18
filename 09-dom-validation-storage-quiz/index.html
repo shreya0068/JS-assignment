@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Quiz</title>
+</head>
+<body>
+
+    <h2>JavaScript Quiz</h2>
+
+    <p>1. Which keyword declares a variable?</p>
+
+    <form id="quizForm">
+        <input type="radio" name="answer" value="let">
+        let<br>
+
+        <input type="radio" name="answer" value="print">
+        print<br>
+
+        <input type="radio" name="answer" value="display">
+        display<br>
+
+        <br>
+        <button type="submit">Submit Answer</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        let form = document.getElementById("quizForm");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let selected = document.querySelector(
+                'input[name="answer"]:checked'
+            );
+
+            let result = document.getElementById("result");
+
+            if (!selected) {
+                result.textContent = "Please select an answer.";
+                return;
+            }
+
+            let score = selected.value === "let" ? 1 : 0;
+
+            result.textContent = "Your Score: " + score + "/1";
+
+            // Store score in browser
+            localStorage.setItem("quizScore", score);
+        });
+    </script>
+
+</body>
+</html>

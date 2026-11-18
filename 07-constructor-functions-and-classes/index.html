@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Constructor Functions and Classes</title>
+</head>
+<body>
+
+    <h2>JavaScript Constructors and Classes</h2>
+
+    <script>
+        // Constructor Function
+        function Student(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        let student1 = new Student("Rahul", 20);
+
+        console.log("Constructor Function:");
+        console.log(student1.name);
+        console.log(student1.age);
+
+        // Using Class
+        class Teacher {
+            constructor(name, subject) {
+                this.name = name;
+                this.subject = subject;
+            }
+        }
+
+        let teacher1 = new Teacher("Amit", "JavaScript");
+
+        console.log("Class Example:");
+        console.log(teacher1.name);
+        console.log(teacher1.subject);
+    </script>
+
+</body>
+</html>

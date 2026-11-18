@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Timers</title>
+</head>
+<body>
+    <h2>JavaScript Timers and Intervals</h2>
+    <p id="message">Waiting for message...</p>
+    <p id="counter">Counter: 0</p>
+
+    <script>
+        // setTimeout example
+        setTimeout(function() {
+            document.getElementById("message").textContent =
+                "Hello! Message displayed after 2 seconds.";
+        }, 2000);
+        // setInterval example
+        let count = 0;
+
+        let timer = setInterval(function() {
+            count++;
+
+            document.getElementById("counter").textContent =
+                "Counter: " + count;
+
+            if (count === 5) {
+                clearInterval(timer);
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
